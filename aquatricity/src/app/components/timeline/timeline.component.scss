@@ -1,0 +1,42 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+li {
+  color: #38A3A5;
+  margin-bottom: 16px;
+}
+
+li::before {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  border-radius: 25px;
+  height: 16px;
+  background-color: #57CC99;
+  content: "";
+  margin: 4px 16px -2px;
+}
+
+li::after {
+  position: absolute;
+  display: inline-block;
+  width: 3px;
+  border-radius: 25px;
+  height: 40px;
+  background-color: #57CC99;
+  content: "";
+  left: 0;
+  margin-left: 39px;
+  margin-top: -20px;
+}
+
+li:first-child::after {
+  display: none;
+}
+
+.not-finished::after, .not-finished::before {
+  background-color: #D9D9D9;
+}

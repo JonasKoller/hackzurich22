@@ -4,6 +4,11 @@
 <div class="container" *ngIf="currentUser">
   <h1 class="welcome">HELLO {{ currentUser.displayName }}</h1>
   <p class="welcome-description">This is your overview page check out the newest articles. </p>
+
+  <h2 class="articles-title">CURRENT PATH</h2>
+  <p class="current-path-subtitle"><strong>Path:</strong> Simply saving electricity in everyday life</p>
+  <app-timeline [finishedTasks]="finishedPathTasks" [unfinishedTasks]="unfinishedPathTasks"></app-timeline>
+
   <h2 class="articles-title">NEWEST ARTICLES</h2>
   <app-article-card
     icon="electricity"
@@ -15,4 +20,19 @@
     title="Save water by not showering"
     content="This is some random preview text click card if you want to read more."
   ></app-article-card>
+
+  <h2 class="articles-title">PAST PATHS</h2>
+  <app-past-path-card
+    icon="water"
+    title="Path: Use devices in a water-saving way"
+    content="Discontinued"
+    status="canceled"
+  ></app-past-path-card>
+
+  <app-past-path-card
+    icon="electricity"
+    title="Path: Energy efficient devices"
+    content="Finished"
+    status="done"
+  ></app-past-path-card>
 </div>

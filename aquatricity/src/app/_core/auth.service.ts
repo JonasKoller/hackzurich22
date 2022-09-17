@@ -34,8 +34,8 @@ export class AuthService {
     return await this.afAuth.authState.pipe(first()).toPromise();
   }
 
-  logout() {
-    this.afAuth.auth.signOut();
+  async logout() {
+    await this.afAuth.auth.signOut();
   }
 
   getCurrentUser() {

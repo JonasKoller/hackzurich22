@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { AppSliderComponent } from './components/app-slider/app-slider.component';
 import { SwiperModule } from 'swiper/angular';
-import { InterestsComponent } from './interests/interests.component';
-import { LoginComponent } from './login/login.component';
+import { InterestsComponent } from './pages/interests/interests.component';
+import { LoginComponent } from './pages/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
@@ -29,7 +29,9 @@ const firebaseConfig = {
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { OverviewComponent } from './pages/overview/overview.component';
 import {OverviewContainerComponent} from "./containers/overview/overview.component";
+import { TimelineComponent } from './components/timeline/timeline.component';
 import {AuthGuard} from "./_core/auth.guard";
+import { PastPathCardComponent } from './components/past-path-card/past-path-card.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import {AuthGuard} from "./_core/auth.guard";
     ArticleCardComponent,
     OverviewComponent,
     OverviewContainerComponent,
+    TimelineComponent,
+    PastPathCardComponent,
   ],
   imports: [
     BrowserModule,
