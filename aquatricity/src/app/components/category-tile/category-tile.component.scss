@@ -1,0 +1,25 @@
+.category-tile {
+  background-color: #38A3A5;
+  width: 160px;
+  height: 96px;
+  border-radius: 6px;
+  cursor: pointer;
+
+   &:hover {
+     background-color: #57CC99;
+   }
+
+  &-icon {
+    padding-top: 8px;
+    color: #fafafa;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-text {
+    color: #fafafa;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+  }
+}

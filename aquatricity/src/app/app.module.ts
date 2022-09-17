@@ -39,6 +39,7 @@ import { PathsComponent } from './containers/paths/paths.component';
 import { PathsPageComponent } from './pages/paths-page/paths-page.component';
 import { MyForestPageComponent } from './pages/my-forest-page/my-forest-page.component';
 import { ArticlesPageComponent } from './pages/articles-page/articles-page.component';
+import { CategoryTileComponent } from './components/category-tile/category-tile.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ArticlesPageComponent } from './pages/articles-page/articles-page.compo
     PathsPageComponent,
     MyForestPageComponent,
     ArticlesPageComponent,
+    CategoryTileComponent,
   ],
   imports: [
     BrowserModule,
