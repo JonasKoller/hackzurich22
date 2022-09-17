@@ -8,25 +8,25 @@
   <h3 class="interests__subtitle">CATEGORIES</h3>
   <form>
     <label class="cursor-pointer label interests__label">
-      <input type="checkbox" class="checkbox checkbox-accent" />
+      <input type="checkbox" class="checkbox checkbox-accent" (change)="addTag($event.target, 'saveWater')"/>
       <span class="label-text interests__label__span">Save water</span>
     </label>
     <label class="cursor-pointer label interests__label">
-      <input type="checkbox" class="checkbox checkbox-accent" />
+      <input type="checkbox" class="checkbox checkbox-accent" (change)="addTag($event.target, 'saveElectricity')"/>
       <span class="label-text interests__label__span">Save electricity</span>
     </label>
     <label class="cursor-pointer label interests__label">
-      <input type="checkbox" class="checkbox checkbox-accent" />
+      <input type="checkbox" class="checkbox checkbox-accent" (change)="addTag($event.target, 'sustainableMobility')"/>
       <span class="label-text interests__label__span">Sustainable mobility</span>
     </label>
     <label class="cursor-pointer label interests__label">
-      <input type="checkbox" class="checkbox checkbox-accent" />
+      <input type="checkbox" class="checkbox checkbox-accent" (change)="addTag($event.target, 'trashRecycling')"/>
       <span class="label-text interests__label__span">Trash & recycling</span>
     </label>
     <label class="cursor-pointer label interests__label">
-      <input type="checkbox" class="checkbox checkbox-accent" />
+      <input type="checkbox" class="checkbox checkbox-accent" (change)="addTag($event.target, 'sensiblePurchasing')"/>
       <span class="label-text interests__label__span">Sensible purchasing</span>
     </label>
-    <button class="btn btn-primary interests__button" type="button">NEXT</button>
+    <button class="btn btn-primary interests__button" type="button" (click)="emitInterests()">{{ getButtonLabel() }}</button>
   </form>
 </div>
