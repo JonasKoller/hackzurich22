@@ -10,6 +10,9 @@ import {ArticleCardComponent} from "./components/article-card/article-card.compo
 import {OverviewContainerComponent} from "./containers/overview/overview.component";
 import {canActivate} from "@angular/fire/auth-guard";
 import { AuthGuard } from './_core/auth.guard';
+import {MyForestComponent} from "./containers/my-forest/my-forest.component";
+import { ArticlesComponent } from './containers/articles/articles.component';
+import {PathsComponent} from "./containers/paths/paths.component";
 
 const routes: Routes = [
   {
@@ -31,6 +34,21 @@ const routes: Routes = [
   {
     path : 'overview',
     component: OverviewContainerComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path : 'my-forest',
+    component: MyForestComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path : 'articles',
+    component: ArticlesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path : 'paths',
+    component: PathsComponent,
     canActivate: [AuthGuard]
   },
   {
