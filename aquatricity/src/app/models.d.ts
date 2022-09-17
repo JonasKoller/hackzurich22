@@ -6,11 +6,12 @@ export interface Userdata {
   environmentalCoins: number;
   interests: string[];
   readArticles: string[];
+  finishedPaths: Map<string, boolean>;
 }
 
 export interface Path {
   articles: string[];
-  category: string;
+  category: 'water' | 'electricity' | undefined;
   duration: string;
   rewardEnvironmentalCoins: number;
   title: string;

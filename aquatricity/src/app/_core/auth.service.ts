@@ -68,7 +68,9 @@ export class AuthService {
     this.db.collection('users').doc(this.getCurrentUserUid()).set({
       currentPath: "",
       environmentalCoins: 0,
-      interests: []
+      interests: [],
+      readArticles: [],
+      finishedPaths: {}
     }).then();
   }
 
