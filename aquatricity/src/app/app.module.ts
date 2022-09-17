@@ -32,6 +32,7 @@ import {OverviewContainerComponent} from "./containers/overview/overview.compone
 import { TimelineComponent } from './components/timeline/timeline.component';
 import {AuthGuard} from "./_core/auth.guard";
 import { PastPathCardComponent } from './components/past-path-card/past-path-card.component';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PastPathCardComponent } from './components/past-path-card/past-path-car
     BrowserModule,
     AppRoutingModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp(firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
