@@ -4,6 +4,11 @@
 <div class="container" *ngIf="currentUser">
   <h1 class="welcome">HELLO {{ currentUser.displayName }}</h1>
   <p class="welcome-description">This is your overview page check out the newest articles. </p>
+
+  <h2 class="articles-title">CURRENT PATH</h2>
+  <p class="current-path-subtitle"><strong>Path:</strong> Simply saving electricity in everyday life</p>
+  <app-timeline [finishedTasks]="finishedPathTasks" [unfinishedTasks]="unfinishedPathTasks"></app-timeline>
+
   <h2 class="articles-title">NEWEST ARTICLES</h2>
   <app-article-card
     icon="electricity"

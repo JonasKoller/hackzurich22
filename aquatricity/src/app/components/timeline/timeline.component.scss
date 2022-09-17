@@ -1,6 +1,7 @@
 ul {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 li {
@@ -28,7 +29,7 @@ li::after {
   background-color: #57CC99;
   content: "";
   left: 0;
-  margin-left: 23px;
+  margin-left: 39px;
   margin-top: -20px;
 }
 
