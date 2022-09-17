@@ -1,1 +1,20 @@
-<p>my-forest-page works!</p>
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="main">
+  <div class="text-2xl font-bold text-primary">THIS IS YOUR FOREST</div>
+  <div class="main__content">Upgrade your forest by using your environmental coins. Show your forest to your friends and test who the better enviromentalist among you is.</div>
+</div>
+<div class="image">
+  <img src="assets/images/forest_half_dirty.jpg" alt="image of nature">
+</div>
+<div class="level">
+  <div class="text-xl font-semibold text-primary">STATS</div>
+  <div class="level--level">LEVEL {{ level }} Forest</div>
+
+  <div>You need 130 Environmental Coins to upgrade your forest to Level {{ level ? level + 1 : 1}}.</div>
+  <div class="level__button">
+    <button class="btn btn-primary login__button text-white" type="button">PAY 130 COINS</button>
+  </div>
+</div>

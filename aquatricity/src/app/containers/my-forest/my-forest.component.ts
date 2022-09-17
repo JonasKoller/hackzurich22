@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {UserdataService} from "../../_core/userdata.service";
+import {AuthService} from "../../_core/auth.service";
+import {Observable} from "rxjs";
+import {Article, Path, Userdata} from "../../models";
 
 @Component({
   selector: 'app-my-forest',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyForestComponent implements OnInit {
 
-  constructor() { }
+  allPaths: Observable<Path[] | undefined> | null = null;
+  allArticles: Observable<Article[] | undefined> | null = null;
 
-  ngOnInit(): void {
+  constructor(private userdataService: UserdataService) { }
+
+  async ngOnInit() {
+    this.allPaths = this.userdataService.loadPaths();
+    this.allArticles = this.userdataService.loadArticles();
   }
 
 }
