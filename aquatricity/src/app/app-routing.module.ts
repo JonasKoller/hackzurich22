@@ -14,12 +14,26 @@ import {MyForestComponent} from "./containers/my-forest/my-forest.component";
 import { ArticlesComponent } from './containers/articles/articles.component';
 import {PathsComponent} from "./containers/paths/paths.component";
 import { IsLoggedInGuard } from './_core/is-logged-in.guard';
+import { OverviewComponent } from './pages/overview/overview.component';
 
 const routes: Routes = [
   {
     path : '',
     component : LandingPageComponent,
     canActivate: [IsLoggedInGuard]
+  },
+  {
+    path : 'articles',
+    children: [{
+      path : '',
+      component: ArticlesComponent,
+      canActivate: [AuthGuard],
+    },
+    {
+      path : ':category',
+      component: OverviewContainerComponent,
+      canActivate: [AuthGuard],
+    }]
   },
   {
     path : 'register',
@@ -43,11 +57,6 @@ const routes: Routes = [
   {
     path : 'my-forest',
     component: MyForestComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path : 'articles',
-    component: ArticlesComponent,
     canActivate: [AuthGuard]
   },
   {
