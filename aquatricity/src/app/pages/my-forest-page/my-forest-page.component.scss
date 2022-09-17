@@ -1,0 +1,30 @@
+.main {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 32px;
+
+  &__content {
+    padding-top: 8px;
+  }
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  img {
+    width: 75%;
+  }
+}
+
+.level {
+  padding: 32px 16px;
+
+  &--level {
+    padding-bottom: 16px;
+  }
+
+  &__button {
+    padding-top: 24px;
+  }
+}
