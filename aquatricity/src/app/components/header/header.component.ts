@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+
+  isOpen = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  changevalue() {
+    this.isOpen = !this.isOpen;
+  }
 }
