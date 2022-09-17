@@ -10,6 +10,7 @@ import { AppSliderComponent } from './components/app-slider/app-slider.component
 import { SwiperModule } from 'swiper/angular';
 import { InterestsComponent } from './interests/interests.component';
 import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     InterestsComponent,
     LoginComponent,
     LandingPageComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
