@@ -11,17 +11,16 @@
     <app-timeline [finishedTasks]="getFinishedPathTasks()" [unfinishedTasks]="getUnfinishedPathTasks()"></app-timeline>
   </ng-template>
 
-  <h2 class="articles-title">NEWEST ARTICLES</h2>
-  <app-article-card
-    icon="electricity"
-    title="Do this to minimize electricity"
-    content="This is some random preview text click card if you want to read more."
-  ></app-article-card>
-  <app-article-card
-    icon="water"
-    title="Save water by not showering"
-    content="This is some random preview text click card if you want to read more."
-  ></app-article-card>
+  <ng-template [ngIf]="getNewestTwoArticles().length > 0">
+    <h2 class="articles-title">NEWEST ARTICLES</h2>
+    <app-article-card
+      *ngFor="let article of getNewestTwoArticles()"
+      [icon]="article.category === undefined ? 'electricity' : article.category"
+      [title]="article.title"
+      [content]="article.textParts[0]"
+    ></app-article-card>
+  </ng-template>
+
 
   <h2 class="articles-title">PAST PATHS</h2>
   <app-past-path-card

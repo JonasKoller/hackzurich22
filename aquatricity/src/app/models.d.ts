@@ -1,3 +1,6 @@
+import * as firebase from "firebase";
+import Timestamp = firebase.firestore.Timestamp;
+
 export interface Userdata {
   currentPath: string;
   environmentalCoins: number;
@@ -21,4 +24,6 @@ export interface Article {
   textParts: string[];
   title: string;
   uid: string;
+  category: 'water' | 'electricity';
+  creationDate: Timestamp;
 }
