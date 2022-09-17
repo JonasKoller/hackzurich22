@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import {Article, Path, Userdata} from '../models';
+import {firestore} from "firebase/app";
+import * as firebase from "firebase";
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +25,13 @@ export class UserdataService {
   loadArticles(): Observable<Article[] | undefined> {
     let itemDoc = this.firestore.collection<Article>('articles');
     return itemDoc.valueChanges();
+  }
+
+  addUserPoints(pointsToEarn: number, currentUserUid: any) {
+    this.firestore.collection('users').doc(currentUserUid).update({'environmentalCoins': firebase.firestore.FieldValue.increment(pointsToEarn)});
+  }
+
+  markArticleAsRead(articleUid: string, currentUserUid: any) {
+    this.firestore.collection('users').doc(currentUserUid).update({'readArticles': firebase.firestore.FieldValue.arrayUnion(articleUid)});
   }
 }

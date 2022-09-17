@@ -1,0 +1,17 @@
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="constrainer">
+  <ng-container *ngFor="let textPart of getArticleWithUid()?.textParts;
+        index as indexOfArticle;">
+    <div *ngIf="activeStep === indexOfArticle">
+      <h1 class="article-title">{{ getArticleWithUid()?.title }}</h1>
+      <p class="article-description">{{ textPart }}</p>
+      <button class="btn btn-primary" (click)="nextStep()" *ngIf="activeStep !== (getArticleWithUid()?.textParts!.length - 1)">CONTINUE</button>
+      <button class="btn btn-primary" (click)="finish()" *ngIf="activeStep === (getArticleWithUid()?.textParts!.length - 1)">
+        <fa-icon [icon]="coinFront"></fa-icon>
+        <p class="badge-coins">+{{ getArticleWithUid()?.pointToEarn }}</p> FINISH
+      </button>
+    </div>
+  </ng-container>
+</div>
