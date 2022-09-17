@@ -1,0 +1,10 @@
+<div class="link-card block p-6 bg-white rounded-lg shadow-md hover:bg-slate-50 dark:border-gray-700 dark:hover:bg-slate-50 ">
+  <div>
+    <h2 class="link-card-title">{{ title }}</h2>
+    <p class="link-card-text">{{ descriptionOne }}</p>
+    <p class="link-card-text" *ngIf="descriptionTwo !== ''">{{ descriptionTwo }}</p>
+  </div>
+  <div class="link-card-icon">
+    <fa-icon [icon]="faArrowRight" class="link-card-icon-svg"></fa-icon>
+  </div>
+</div>

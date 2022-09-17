@@ -15,6 +15,9 @@ import { ArticlesComponent } from './containers/articles/articles.component';
 import {PathsComponent} from "./containers/paths/paths.component";
 import { IsLoggedInGuard } from './_core/is-logged-in.guard';
 import { OverviewComponent } from './pages/overview/overview.component';
+import {
+  ArticleCategoryContainerComponent
+} from "./containers/article-category-container/article-category-container.component";
 
 const routes: Routes = [
   {
@@ -31,7 +34,7 @@ const routes: Routes = [
     },
     {
       path : ':category',
-      component: OverviewContainerComponent,
+      component: ArticleCategoryContainerComponent,
       canActivate: [AuthGuard],
     }]
   },

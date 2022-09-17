@@ -16,7 +16,8 @@
   <div class="flex-1">
     <a class="btn btn-ghost normal-case text-xl">Aquatricity</a>
   </div>
-  <div *ngIf="environmentalCoins && environmentalCoins > 0">
-    Coins: {{ this.environmentalCoins }}
+  <div class="badge badge-lg" *ngIf="environmentalCoins">
+    <fa-icon [icon]="coinFront"></fa-icon>
+    <p class="badge-coins">{{ this.environmentalCoins }}</p>
   </div>
 </div>
