@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-link-card',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./link-card.component.scss']
 })
 export class LinkCardComponent implements OnInit {
+
+  faArrowRight = faArrowRight;
+  @Input() title: string = '';
+  @Input() descriptionOne: string = '';
+  @Input() descriptionTwo: string = '';
 
   constructor() { }
 

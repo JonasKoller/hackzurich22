@@ -16,6 +16,7 @@ export interface Path {
 
 export interface Article {
   pointToEarn: number;
+  category: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchases';
   readingTime: string;
   textParts: string[];
   title: string;

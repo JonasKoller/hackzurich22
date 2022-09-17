@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faArrowRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import {faArrowRightFromBracket, faCoins} from '@fortawesome/free-solid-svg-icons';
 import {AuthService} from '../../_core/auth.service';
 import {Router} from '@angular/router';
 import {UserdataService} from "../../_core/userdata.service";
@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   isOpen = false;
   logoutIcon = faArrowRightFromBracket;
+  coinFront = faCoins;
   environmentalCoins: number | undefined = 0;
 
   constructor(private auth: AuthService, private router: Router, private userdataService: UserdataService) { }

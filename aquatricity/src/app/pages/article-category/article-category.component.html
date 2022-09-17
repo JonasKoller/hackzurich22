@@ -1,1 +1,9 @@
-<p>{{ category }}</p>
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="constrainer">
+  <h1 class="article-category-title">ARTICLES ABOUT {{ category }}</h1>
+  <p class="article-category-description">Check out these articles about {{ category }} and win coins by just taking time and reading them.</p>
+  <h2 class="article-category-second-title">ARTICLES</h2>
+  <app-link-card *ngFor="let article of getArticleWithCategory()" title="Bathing is bad" descriptionOne="Reading time: 1-2min"></app-link-card>
+</div>

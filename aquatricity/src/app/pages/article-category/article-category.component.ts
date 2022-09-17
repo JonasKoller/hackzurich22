@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Article} from "../../models";
 
 @Component({
   selector: 'app-article-category',
@@ -7,10 +8,14 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ArticleCategoryComponent implements OnInit {
   @Input() category!: string;
+  @Input() articles!: Article[] | null | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getArticleWithCategory() {
+    return this.articles?.filter(article => article.category === this.category);
+  }
 }
