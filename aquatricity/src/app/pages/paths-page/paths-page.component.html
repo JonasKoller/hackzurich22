@@ -1,1 +1,15 @@
-<p>paths-page works!</p>
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="constrainer">
+  <h1 class="paths-title">CHOOSE YOUR PATH</h1>
+  <p class="paths-description">You want to do something good and not just once? Try a path challenge that gives you a tip every week which you can use in your daily life.</p>
+  <h2 class="paths-second-title">CATEGORIES</h2>
+  <div class="paths-category-grid">
+    <app-category-tile icon="water" description="Save water" [routerLink]="['/paths/water']"></app-category-tile>
+    <app-category-tile icon="electricity" description="Save electricity" [routerLink]="['/paths/electricity']"></app-category-tile>
+    <app-category-tile icon="mobility" description="Sustainable mobility" [routerLink]="['/paths/mobility']"></app-category-tile>
+    <app-category-tile icon="trash" description="Trash & Recycling" [routerLink]="['/paths/trash']"></app-category-tile>
+    <app-category-tile icon="purchases" description="Sensible purchasing" [routerLink]="['/paths/purchasing']"></app-category-tile>
+  </div>
+</div>

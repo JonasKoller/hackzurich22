@@ -43,6 +43,7 @@ import { CategoryTileComponent } from './components/category-tile/category-tile.
 import { LinkCardComponent } from './components/link-card/link-card.component';
 import { ArticleCategoryContainerComponent } from './containers/article-category-container/article-category-container.component';
 import { ArticleCategoryComponent } from './pages/article-category/article-category.component';
+import { PathCategoryContainerComponent } from './containers/path-category-container/path-category-container.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ArticleCategoryComponent } from './pages/article-category/article-categ
     LinkCardComponent,
     ArticleCategoryContainerComponent,
     ArticleCategoryComponent,
+    PathCategoryContainerComponent,
   ],
   imports: [
     BrowserModule,
