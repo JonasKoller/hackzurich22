@@ -15,7 +15,6 @@ export class OverviewComponent implements OnInit {
   @Input() allArticles: Article[] | undefined | null = [];
 
   currentUser: any;
-  unfinishedPathTasks = ['Cooking with a lid', 'Proper ventilation'];
 
   constructor(private auth: AuthService) { }
 
@@ -41,5 +40,9 @@ export class OverviewComponent implements OnInit {
     return map === undefined ? [] : map;
   }
 
+  getNewestTwoArticles(): Article[] {
+    let articles = this.allArticles?.sort((a, b) => a.creationDate.toMillis() - b.creationDate.toMillis()).slice(0, 2);
+    return articles === undefined ? [] : articles;
+  }
 
 }
