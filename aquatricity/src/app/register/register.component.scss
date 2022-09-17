@@ -1,0 +1,19 @@
+.register {
+  margin-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  &__title-image {
+    width: 80vw;
+  }
+
+  &__page-title {
+    font-size: 24px; // TODO auslagern
+    font-weight: 700;
+    color: #22577A;
+    margin-top: 20px;
+  }
+
+}
