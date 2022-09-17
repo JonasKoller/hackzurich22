@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
+import {first} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
 
   async loginWithEmailAndPassword(user: User) {
     await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(() => {
-      this.router.navigateByUrl('/success');
+      this.router.navigateByUrl('/overview');
     });
   }
 
@@ -25,7 +26,7 @@ export class AuthService {
         displayName: user.displayname
       });
       this.loginWithEmailAndPassword(user);
-      this.router.navigateByUrl('/success');
+      this.router.navigateByUrl('/interests');
     });
   }
 
@@ -37,8 +38,8 @@ export class AuthService {
     this.afAuth.auth.signOut();
   }
 
-  getCurrentUser() {
-    return this.afAuth.auth.currentUser;
+  async getCurrentUser() {
+    return this.afAuth.authState.pipe(first()).toPromise();
   }
 
   getCurrentUserUid() {
