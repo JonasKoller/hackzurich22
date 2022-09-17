@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { RegisterComponent } from './register/register.component';
 import { AppSliderComponent } from './components/app-slider/app-slider.component';
 import { SwiperModule } from 'swiper/angular';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { SwiperModule } from 'swiper/angular';
     AppComponent,
     RegisterComponent,
     AppSliderComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
