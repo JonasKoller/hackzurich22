@@ -1,14 +1,17 @@
 <div class="register">
   <img src="assets/images/secure_login.svg" alt="Registration illustration" class="register__title-image">
   <h2 class="register__page-title">REGISTER</h2>
-
-  <form>
-    <input type="text" placeholder="Username" class="input input-bordered w-full max-w-md register__input" />
-    <input type="email" placeholder="Email" class="input input-bordered w-full max-w-md register__input" />
-    <input type="password" placeholder="Password" class="input input-bordered w-full max-w-md register__input--double" />
-    <input type="password" placeholder="Repeat password" class="input input-bordered w-full max-w-md register__input" />
-    <button class="btn btn-primary register__button" type="button">REGISTER</button>
-  </form>
+  <div class="alert alert-error shadow-lg" *ngIf="showErrorMessage">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <span>{{ errorMessage }}</span>
+    </div>
+  </div>
+  <input type="text" [(ngModel)]="user.displayname" placeholder="Username" class="input input-bordered w-full max-w-md register__input" />
+  <input type="email" [(ngModel)]="user.email" placeholder="Email" class="input input-bordered w-full max-w-md register__input" />
+  <input type="password" [(ngModel)]="user.password" placeholder="Password" class="input input-bordered w-full max-w-md register__input--double" />
+  <input type="password" [(ngModel)]="passwordRepeat" placeholder="Repeat password" class="input input-bordered w-full max-w-md register__input" />
+  <button class="btn btn-primary register__button" type="button" (click)="register()">REGISTER</button>
 
   <a class="link link-accent register__link-already-registered" [routerLink]="['/login']">I'm already registered. Sign in</a>
 </div>

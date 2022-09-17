@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService, User} from "../_core/auth.service";
 import {auth} from "firebase";
+import {checkEmail} from "../helpers/helpers";
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import {auth} from "firebase";
 export class LoginComponent implements OnInit {
   user: User = { displayname: '', email: '', password: '' };
   showErrorMessage = false;
+  errorMessage: string = '';
 
   constructor(private auth: AuthService) { }
 
@@ -17,12 +19,15 @@ export class LoginComponent implements OnInit {
   }
 
   async login() {
-    this.auth.loginWithEmailAndPassword(this.user).catch((e) => {
-      this.showErrorMessage = true;
+    if (checkEmail(this.user.email) && this.user.password !== '') {
+      this.auth.loginWithEmailAndPassword(this.user).catch((e) => {
+        this.errorMessage = e.message;
+        this.showErrorMessage = true;
 
-      setTimeout(() => {
-        this.showErrorMessage = false;
-      }, 4000)
-    });
+        setTimeout(() => {
+          this.showErrorMessage = false;
+        }, 4000)
+      });
+    }
   }
 }
