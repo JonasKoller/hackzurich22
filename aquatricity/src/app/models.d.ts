@@ -19,11 +19,10 @@ export interface Path {
 
 export interface Article {
   pointToEarn: number;
-  category: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchases';
+  category: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchases' | undefined;
   readingTime: string;
   textParts: string[];
   title: string;
   uid: string;
-  category: 'water' | 'electricity';
   creationDate: Timestamp;
 }

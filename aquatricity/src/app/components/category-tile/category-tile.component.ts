@@ -13,7 +13,7 @@ import {
   styleUrls: ['./category-tile.component.scss']
 })
 export class CategoryTileComponent implements OnInit {
-  @Input() icon: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchasing' | undefined;
+  @Input() icon: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchases' | undefined;
   @Input() description: string | undefined;
 
   constructor() { }
@@ -31,7 +31,7 @@ export class CategoryTileComponent implements OnInit {
         return faBicycle;
       case 'trash':
         return faTrash;
-      case 'purchasing':
+      case 'purchases':
         return faCartShopping;
       default: return faBoltLightning;
     }

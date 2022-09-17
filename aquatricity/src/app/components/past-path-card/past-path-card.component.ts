@@ -1,5 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {faBoltLightning, faCheck, faHandHoldingDroplet, faQuestion, faXmark} from '@fortawesome/free-solid-svg-icons';
+import {
+  faBicycle,
+  faBoltLightning, faCartShopping,
+  faCheck,
+  faHandHoldingDroplet,
+  faQuestion, faTrash,
+  faXmark
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-past-path-card',
@@ -8,7 +15,7 @@ import {faBoltLightning, faCheck, faHandHoldingDroplet, faQuestion, faXmark} fro
 })
 export class PastPathCardComponent {
 
-  @Input() icon: 'water' | 'electricity' | undefined;
+  @Input() icon: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchases' | undefined;
   @Input() status: 'done' | 'canceled' | undefined;
   @Input() title: string = '';
   @Input() content: string = '';
@@ -22,6 +29,12 @@ export class PastPathCardComponent {
         return faHandHoldingDroplet;
       case "electricity":
         return faBoltLightning;
+      case 'mobility':
+        return faBicycle;
+      case 'trash':
+        return faTrash;
+      case 'purchases':
+        return faCartShopping;
       default: return faBoltLightning;
     }
   }

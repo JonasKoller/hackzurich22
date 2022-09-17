@@ -19,3 +19,4 @@ export class ArticleCategoryComponent implements OnInit {
     return this.articles?.filter(article => article.category === this.category);
   }
 }
+
