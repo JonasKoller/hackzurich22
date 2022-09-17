@@ -13,7 +13,7 @@ export class AuthService {
 
   async loginWithEmailAndPassword(user: User) {
     await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(() => {
-      this.router.navigateByUrl('/success');
+      this.router.navigateByUrl('/overview');
     });
   }
 
@@ -25,7 +25,7 @@ export class AuthService {
         displayName: user.displayname
       });
       this.loginWithEmailAndPassword(user);
-      this.router.navigateByUrl('/success');
+      this.router.navigateByUrl('/interests');
     });
   }
 
