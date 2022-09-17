@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router';
 import {first} from "rxjs/operators";
+import {AngularFirestore} from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import {first} from "rxjs/operators";
 export class AuthService {
 
   constructor(private afAuth: AngularFireAuth,
-              private router: Router) {
+              private router: Router,
+              private db: AngularFirestore) {
   }
 
   async loginWithEmailAndPassword(user: User) {
@@ -25,6 +27,7 @@ export class AuthService {
       res.user.updateProfile({
         displayName: user.displayname
       });
+      this.addUserToFirestore();
       this.router.navigateByUrl('/interests');
     });
   }
@@ -60,6 +63,15 @@ export class AuthService {
   useDeviceLang() {
     this.afAuth.auth.useDeviceLanguage();
   }
+
+  addUserToFirestore() {
+    this.db.collection('users').doc(this.getCurrentUserUid()).set({
+      currentPath: "",
+      environmentalCoins: 0,
+      interests: []
+    }).then();
+  }
+
 }
 
 export interface User {
