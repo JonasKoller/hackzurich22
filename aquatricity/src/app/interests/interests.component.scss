@@ -1,0 +1,40 @@
+.interests {
+  margin-top: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    &__title-image {
+      width: 50vw;
+    }
+  }
+
+  &__page-title {
+    font-size: 24px; // TODO auslagern
+    font-weight: 700;
+    color: #22577A;
+    margin-top: 20px;
+  }
+
+  &__subtitle {
+    font-size: 16px; // TODO auslagern
+    font-weight: 700;
+    color: #22577A;
+    margin-top: 32px;
+  }
+
+  &__label {
+    justify-content: normal;
+
+    &__span {
+      margin-left: 16px;
+    }
+  }
+
+  &__button {
+    margin-top: 32px;
+  }
+
+}

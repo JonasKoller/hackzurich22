@@ -1,4 +1,4 @@
-.register {
+.login {
   margin-top: 32px;
   padding-left: 16px;
   padding-right: 16px;
@@ -11,7 +11,7 @@
   }
 
   &__page-title {
-    font-size: 24px; // TODO auslagern
+    font-size: 24px;
     font-weight: 700;
     color: #22577A;
     margin-top: 20px;
@@ -28,7 +28,7 @@
     margin-top: 16px;
   }
 
-  &__link-not-registered {
+  &__link-already-registered {
     margin-top: 16px;
   }
 

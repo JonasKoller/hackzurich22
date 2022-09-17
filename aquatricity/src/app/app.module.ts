@@ -8,14 +8,17 @@ import { environment } from '../environments/environment';
 import { RegisterComponent } from './register/register.component';
 import { AppSliderComponent } from './components/app-slider/app-slider.component';
 import { SwiperModule } from 'swiper/angular';
+import { InterestsComponent } from './interests/interests.component';
+import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     AppSliderComponent,
+    InterestsComponent,
+    LoginComponent,
     LandingPageComponent,
   ],
   imports: [
