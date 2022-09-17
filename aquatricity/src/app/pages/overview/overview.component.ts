@@ -50,8 +50,6 @@ export class OverviewComponent implements OnInit {
   }
 
   getFinishedPathById(finishedPathId: string) {
-    console.log(finishedPathId);
-    console.log(this.allPaths?.find(({uid}) => uid === finishedPathId) as Path)
     return this.allPaths?.find(({uid}) => uid === finishedPathId) as Path;
   }
 }
