@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
   &__title-image {
     width: 80vw;
   }
@@ -15,5 +16,4 @@
     color: #22577A;
     margin-top: 20px;
   }
-
 }
