@@ -7,6 +7,7 @@ import {LoginComponent} from "./login/login.component";
 import {HeaderComponent} from "./components/header/header.component";
 import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
 import {ArticleCardComponent} from "./components/article-card/article-card.component";
+import {OverviewContainerComponent} from "./containers/overview/overview.component";
 
 const routes: Routes = [
   {path : '', component : LandingPageComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path : 'login', component: LoginComponent},
   {path : 'header', component: HeaderComponent},
   {path : 'article', component: ArticleCardComponent},
+  {path : 'overview', component: OverviewContainerComponent},
   {
     path: '**',
     redirectTo: '',

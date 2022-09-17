@@ -27,6 +27,8 @@ const firebaseConfig = {
   measurementId: "G-N311ZPZBQ8"
 };
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { OverviewComponent } from './pages/overview/overview.component';
+import {OverviewContainerComponent} from "./containers/overview/overview.component";
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     LandingPageComponent,
     HeaderComponent,
     ArticleCardComponent,
+    OverviewComponent,
+    OverviewContainerComponent,
   ],
   imports: [
     BrowserModule,
