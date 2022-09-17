@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import {AuthService, User} from "../_core/auth.service";
-import {checkEmail} from "../helpers/helpers";
+import {AuthService, User} from "../../_core/auth.service";
+import {checkEmail} from "../../helpers/helpers";
 
 @Component({
   selector: 'app-register',
