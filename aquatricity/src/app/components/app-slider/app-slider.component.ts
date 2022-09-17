@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import SwiperCore, { Pagination } from 'swiper';
 
@@ -13,6 +14,9 @@ SwiperCore.use([Pagination]);
 
 })
 export class AppSliderComponent implements OnInit {
+
+  faArrowRight = faArrowRight;
+
   constructor() { }
 
   ngOnInit(): void {

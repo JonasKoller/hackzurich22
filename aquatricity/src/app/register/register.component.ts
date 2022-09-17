@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import {AuthService, User} from "../_core/auth.service";
 import {checkEmail} from "../helpers/helpers";
 
@@ -13,27 +14,45 @@ export class RegisterComponent implements OnInit {
   showErrorMessage = false;
   errorMessage: string = '';
 
+  faArrowRight = faArrowRight;
+
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
   }
 
   async register() {
-    if (
-      checkEmail(this.user.email) &&
-      this.user.password !== '' &&
-      this.user.displayname !== '' &&
-      this.passwordRepeat !== '' &&
-      this.passwordRepeat === this.user.password
-    ) {
+    let validationErrors = [];
+    if (!checkEmail(this.user.email)) {
+      validationErrors.push('Please provide a valid email');
+    }
+    if (this.user.password === '') {
+      validationErrors.push('Password is invalid');
+    }
+    if (this.user.displayname === '') {
+      validationErrors.push('Username is invalid');
+    }
+    if (this.passwordRepeat === '') {
+      validationErrors.push('Password repeat is invalid');
+    }
+    if (this.passwordRepeat !== this.user.password) {
+      validationErrors.push('Please enter the same password two times');
+    }
+
+    if (validationErrors.length === 0) {
       this.auth.createUserWithEmailAndPassword(this.user).catch((e) => {
-        this.errorMessage = e.message;
-        this.showErrorMessage = true;
-        setTimeout(() => {
-          this.showErrorMessage = false;
-        }, 4000)
+        this.displayErrorMessage(e.message);
       });
+    } else {
+      await this.displayErrorMessage(validationErrors.join(', '));
     }
   }
 
+  async displayErrorMessage(errorMessage: string) {
+    this.errorMessage = errorMessage;
+    this.showErrorMessage = true;
+    setTimeout(() => {
+      this.showErrorMessage = false;
+    }, 6000);
+  }
 }
