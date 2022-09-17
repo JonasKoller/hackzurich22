@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from './app.component';
 import {RegisterComponent} from './register/register.component';
 import {AppSliderComponent} from "./components/app-slider/app-slider.component";
+import {InterestsComponent} from './interests/interests.component';
 import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
   {path : '', component : AppComponent},
   {path : 'register', component : RegisterComponent},
   {path : 'slider', component: AppSliderComponent},
+  {path : 'interests', component: InterestsComponent},
   {path : 'login', component: LoginComponent},
   {
     path: '**',
