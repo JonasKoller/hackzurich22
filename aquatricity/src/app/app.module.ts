@@ -12,6 +12,19 @@ import { InterestsComponent } from './interests/interests.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import {FormsModule} from "@angular/forms";
+import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
+import {AngularFireModule} from "@angular/fire";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD5BA84C5JX5hqeszCtGUzPOhPQc6QV52E",
+  authDomain: "hackzurich-22.firebaseapp.com",
+  projectId: "hackzurich-22",
+  storageBucket: "hackzurich-22.appspot.com",
+  messagingSenderId: "699860255524",
+  appId: "1:699860255524:web:f6b1458b13b31aaf0429b1",
+  measurementId: "G-N311ZPZBQ8"
+};
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -27,6 +40,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -34,7 +49,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     SwiperModule,
-    FontAwesomeModule
+    FormsModule,
+    SwiperModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

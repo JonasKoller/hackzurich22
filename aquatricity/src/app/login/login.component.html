@@ -2,11 +2,15 @@
   <img src="assets/images/secure_login.svg" alt="Registration illustration" class="login__title-image">
   <h2 class="login__page-title">LOGIN</h2>
 
-  <form>
-    <input type="text" placeholder="Username" class="input input-bordered w-full max-w-md login__input" />
-    <input type="password" placeholder="Password" class="input input-bordered w-full max-w-md login__input" />
-    <button class="btn btn-primary login__button" type="button">Login</button>
-  </form>
+  <div class="alert alert-error shadow-lg" *ngIf="showErrorMessage">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <span>Email or password is wrong</span>
+    </div>
+  </div>
+  <input type="text" [(ngModel)]="user.email" placeholder="Email" class="input input-bordered w-full max-w-md login__input" />
+  <input type="password" [(ngModel)]="user.password" placeholder="Password" class="input input-bordered w-full max-w-md login__input" />
+  <button class="btn btn-primary login__button" type="button" (click)="login()">Login</button>
 
   <a class="link link-accent login__link-not-registered" [routerLink]="['/register']">I'm not registered. Sign up</a>
   <fa-icon [icon]="faBell"></fa-icon>
