@@ -25,6 +25,7 @@ const firebaseConfig = {
   appId: "1:699860255524:web:f6b1458b13b31aaf0429b1",
   measurementId: "G-N311ZPZBQ8"
 };
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ const firebaseConfig = {
       registrationStrategy: 'registerWhenStable:30000'
     }),
     SwiperModule,
-    FormsModule
+    FormsModule,
+    SwiperModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

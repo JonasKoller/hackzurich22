@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import {AuthService, User} from "../_core/auth.service";
-import {auth} from "firebase";
 import {checkEmail} from "../helpers/helpers";
 
 @Component({
@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   user: User = { displayname: '', email: '', password: '' };
   showErrorMessage = false;
   errorMessage: string = '';
+
+  faArrowRight = faArrowRight;
 
   constructor(private auth: AuthService) { }
 
