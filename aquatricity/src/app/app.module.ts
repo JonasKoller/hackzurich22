@@ -31,6 +31,7 @@ import { OverviewComponent } from './pages/overview/overview.component';
 import {OverviewContainerComponent} from "./containers/overview/overview.component";
 import { TimelineComponent } from './components/timeline/timeline.component';
 import {AuthGuard} from "./_core/auth.guard";
+import { PastPathCardComponent } from './components/past-path-card/past-path-card.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {AuthGuard} from "./_core/auth.guard";
     OverviewComponent,
     OverviewContainerComponent,
     TimelineComponent,
+    PastPathCardComponent,
   ],
   imports: [
     BrowserModule,
