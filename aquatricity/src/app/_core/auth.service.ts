@@ -25,7 +25,6 @@ export class AuthService {
       res.user.updateProfile({
         displayName: user.displayname
       });
-      this.loginWithEmailAndPassword(user);
       this.router.navigateByUrl('/interests');
     });
   }

@@ -1,4 +1,4 @@
-<div class="register">
+<div class="register constrainer">
   <img src="../../../assets/images/secure_login.svg" alt="Registration illustration" class="register__title-image">
   <h2 class="register__page-title">REGISTER</h2>
   <div class="alert alert-error shadow-lg" *ngIf="showErrorMessage">
@@ -7,10 +7,10 @@
       <span>{{ errorMessage }}</span>
     </div>
   </div>
-  <input type="text" [(ngModel)]="user.displayname" placeholder="Username" class="input input-bordered w-full max-w-md register__input" />
-  <input type="email" [(ngModel)]="user.email" placeholder="Email" class="input input-bordered w-full max-w-md register__input" />
-  <input type="password" [(ngModel)]="user.password" placeholder="Password" class="input input-bordered w-full max-w-md register__input--double" />
-  <input type="password" [(ngModel)]="passwordRepeat" placeholder="Repeat password" class="input input-bordered w-full max-w-md register__input" />
+  <input type="text" [(ngModel)]="user.displayname" placeholder="Username" class="input input-bordered w-full register__input" />
+  <input type="email" [(ngModel)]="user.email" placeholder="Email" class="input input-bordered w-full register__input" />
+  <input type="password" [(ngModel)]="user.password" placeholder="Password" class="input input-bordered w-full register__input--double" />
+  <input type="password" [(ngModel)]="passwordRepeat" placeholder="Repeat password" class="input input-bordered w-full register__input" />
   <button class="btn btn-primary register__button" type="button" (click)="register()">REGISTER</button>
 
   <a class="link link-secondary register__link-already-registered" [routerLink]="['/login']"><fa-icon [icon]="faArrowRight" class="register__link-already-registered__icon"></fa-icon>I'm already registered. Sign in</a>

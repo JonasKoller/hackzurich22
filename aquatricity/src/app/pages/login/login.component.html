@@ -1,4 +1,4 @@
-<div class="login">
+<div class="login constrainer">
   <img src="../../../assets/images/secure_login.svg" alt="Registration illustration" class="login__title-image">
   <h2 class="login__page-title">LOGIN</h2>
 
@@ -8,8 +8,8 @@
       <span>{{ errorMessage }}</span>
     </div>
   </div>
-  <input type="text" [(ngModel)]="user.email" placeholder="Email" class="input input-bordered w-full max-w-md login__input" />
-  <input type="password" [(ngModel)]="user.password" placeholder="Password" class="input input-bordered w-full max-w-md login__input" />
+  <input type="text" [(ngModel)]="user.email" placeholder="Email" class="input input-bordered w-full login__input" />
+  <input type="password" [(ngModel)]="user.password" placeholder="Password" class="input input-bordered w-full login__input" />
   <button class="btn btn-primary login__button" type="button" (click)="login()">Login</button>
 
   <a class="link link-secondary login__link-not-registered" [routerLink]="['/register']"><fa-icon [icon]="faArrowRight" class="login__link-not-registered__icon"></fa-icon>I'm not registered. Sign up</a>

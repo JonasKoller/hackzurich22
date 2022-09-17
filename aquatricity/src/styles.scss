@@ -10,3 +10,31 @@
 :root {
   background-color: #FAFAFA;
 }
+
+.constrainer {
+  margin: 0 16px 0;
+
+  @media (min-width: 800px) {
+    margin: 0 32px 0;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 0 140px 0;
+  }
+
+  @media (min-width: 1440px) {
+    margin: 0 96px 0;
+  }
+
+  @media screen and (min-width: 1500px) {
+    width: 1248px;
+    margin: 0 auto 0;
+  }
+}
+
+.header {
+  @media screen and (min-width: 1500px) {
+    width: 1440px;
+    margin: 0 auto 0;
+  }
+}
