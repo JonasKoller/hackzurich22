@@ -1,11 +1,35 @@
-<div>
-  <swiper [slidesPerView]="1" [spaceBetween]="50" [navigation]="true" [pagination]="{ clickable: true }"
-          [thumbs]="{ swiper: thumbsSwiper }">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-    <ng-template swiperSlide>Slide 4</ng-template>
-    <ng-template swiperSlide>Slide 5</ng-template>
-    <ng-template swiperSlide>Slide 6</ng-template>
-  </swiper>
-</div>
+<swiper class="mySwiper" [pagination]="true">
+  <ng-template swiperSlide>
+    <img class="slider-image" src="../../../assets/images/nature_image.svg" alt="Nature">
+    <div class="slider-text">
+      <h1 class="title">WELCOME TO AQUATRICITY</h1>
+      <p class="text">
+        It is a long established fact that a reader will be distracted by the readable
+        content of a page when looking at its layout. The point of using Lorem Ipsum
+        is that it has a more-or-less normal distribution of letters, as </p>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <img class="slider-image" src="../../../assets/images/nature_image.svg" alt="Nature">
+    <div class="slider-text">
+      <h1 class="title">WHAT ARE WE ABOUT</h1>
+      <p class="text">
+        It is a long established fact that a reader will be distracted by the readable
+        content of a page when looking at its layout. The point of using Lorem Ipsum
+        is that it has a more-or-less normal distribution of letters, as </p>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide>
+    <img class="slider-image" src="../../../assets/images/nature_image.svg" alt="Nature">
+    <div class="slider-text">
+      <h1 class="title">WANT TO JOIN?</h1>
+      <p class="text">
+        It is a long established fact that a reader will be distracted by the readable
+        content of a page when looking at its layout.</p>
+      <div class="link-wrapper">
+        <a class="link link-secondary" href="/register">Register now</a>
+        <a class="link link-secondary" href="/login">Log in</a>
+      </div>
+    </div>
+  </ng-template>
+</swiper>
