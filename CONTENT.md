@@ -1,10 +1,10 @@
 # Aquatricity content
 ## Interessen
-* Wasser sparen
-* Strom sparen
-* Nachhaltig mobil
-* Abfall & Recycling
-* Sinnvoller Einkauf
+* Wasser sparen (water)
+* Strom sparen (electricity)
+* Nachhaltig mobil (mobility)
+* Abfall & Recycling (electricity)
+* Sinnvoller Einkauf (purchasing)
 
 ## Pfade
 ### Wasser sparen
@@ -41,9 +41,12 @@
 
 ## 2-Minuten Tipps
 * Heizung runterdrehen
+  * 
 * Kochen mit Deckel
 * Lichter löschen
 * Geräte richtig abschalten
+  * Fernseher, Kaffeemaschinen, Computer udn andere elektrische Geräte brauchen im Standby-Modus weiterhin viel Strom. Schalte deine Geräte immer ganz aus, damit du wertvolle Energie sparen kannst. 
+  * Auch Lichter gehören in diese Kategorie. Schalte sie aus, wenn sie nicht benötigt werden. Mit den steigenden Strompreisen wird das Sparen auch finanziell attraktiv.
 * Duschen statt baden
   * In der Schweiz entsteht rund 25% des Wasserverbrauchs durchs Duschen und Baden. Mit dem Wechsel vom Baden zu Duschen kann sehr viel Warmwasser gespart werden. Somit können gleich zwei wertvolle Ressourcen, Wasser und Energie, geschont werden.
   * Die empfohlene  Wassertemperatur für den Körper liegt bei etwa 37°C.
