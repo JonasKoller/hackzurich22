@@ -7,6 +7,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RegisterComponent } from './register/register.component';
 import { AppSliderComponent } from './components/app-slider/app-slider.component';
+import { SwiperModule } from 'swiper/angular';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { AppSliderComponent } from './components/app-slider/app-slider.component
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,4 +12,8 @@ export class AppSliderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  thumbsSwiper: any;
+  setThumbsSwiper(swiper: any) {
+    this.thumbsSwiper = swiper;
+  }
 }
