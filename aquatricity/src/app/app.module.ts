@@ -12,6 +12,7 @@ import { InterestsComponent } from './interests/interests.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    SwiperModule
+    SwiperModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
