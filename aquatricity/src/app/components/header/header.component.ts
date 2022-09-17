@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {faArrowRightFromBracket} from '@fortawesome/free-solid-svg-icons';
 import {AuthService} from '../../_core/auth.service';
 import {Router} from '@angular/router';
+import {UserdataService} from "../../_core/userdata.service";
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,15 @@ export class HeaderComponent implements OnInit {
 
   isOpen = false;
   logoutIcon = faArrowRightFromBracket;
+  environmentalCoins: number | undefined = 0;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, private userdataService: UserdataService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    let user = await this.auth.getCurrentUser();
+    this.userdataService.loadUserdata(user!.uid).subscribe(value => {
+      this.environmentalCoins = value?.environmentalCoins;
+    })
   }
 
   changevalue() {

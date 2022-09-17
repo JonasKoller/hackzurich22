@@ -6,13 +6,9 @@ import {AngularFirestore} from "@angular/fire/firestore";
 })
 export class InterestsService {
 
-  constructor(private db: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore) {}
 
   setUserInterests(interests: string[], currentUser: any) {
-    console.log(this.db.collection('users').doc(currentUser).update({'interests': interests}));
-  }
-
-  getUserInterests() {
-
+    this.firestore.collection('users').doc(currentUser).update({'interests': interests});
   }
 }
