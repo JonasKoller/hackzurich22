@@ -41,8 +41,12 @@ export class OverviewComponent implements OnInit {
   }
 
   getNewestTwoArticles(): Article[] {
-    let articles = this.allArticles?.sort((a, b) => a.creationDate.toMillis() - b.creationDate.toMillis()).slice(0, 2);
+    let articles = this.allArticles?.sort((a, b) => b.creationDate.toMillis() - a.creationDate.toMillis()).slice(0, 2);
     return articles === undefined ? [] : articles;
+  }
+
+  shortenTo200Chars(toShorten: string): string {
+    return toShorten.slice(0, 60) + '...';
   }
 
 }

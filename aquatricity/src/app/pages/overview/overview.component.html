@@ -17,7 +17,7 @@
       *ngFor="let article of getNewestTwoArticles()"
       [icon]="article.category === undefined ? 'electricity' : article.category"
       [title]="article.title"
-      [content]="article.textParts[0]"
+      [content]="shortenTo200Chars(article.textParts[0])"
     ></app-article-card>
   </ng-template>
 
