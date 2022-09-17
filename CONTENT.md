@@ -45,4 +45,6 @@
 * Lichter löschen
 * Geräte richtig abschalten
 * Duschen statt baden
-  * https://www.energieschweiz.ch/programme/nicht-verschwenden/spartipps-privathaushalte/
+  * In der Schweiz entsteht rund 25% des Wasserverbrauchs durchs Duschen und Baden. Mit dem Wechsel vom Baden zu Duschen kann sehr viel Warmwasser gespart werden. Somit können gleich zwei wertvolle Ressourcen, Wasser und Energie, geschont werden.
+  * Die empfohlene  Wassertemperatur für den Körper liegt bei etwa 37°C.
+    * https://www.energieschweiz.ch/programme/nicht-verschwenden/spartipps-privathaushalte/
