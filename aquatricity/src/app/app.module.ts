@@ -30,6 +30,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { OverviewComponent } from './pages/overview/overview.component';
 import {OverviewContainerComponent} from "./containers/overview/overview.component";
 import { TimelineComponent } from './components/timeline/timeline.component';
+import {AuthGuard} from "./_core/auth.guard";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     SwiperModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

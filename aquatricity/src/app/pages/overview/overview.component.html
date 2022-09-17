@@ -1,7 +1,18 @@
 <div class="header">
   <app-header></app-header>
 </div>
-<div class="container">
-  <h1 class="welcome" *ngIf="currentUser">HELLO {{ currentUser.displayName }}</h1>
+<div class="container" *ngIf="currentUser">
+  <h1 class="welcome">HELLO {{ currentUser.displayName }}</h1>
   <p class="welcome-description">This is your overview page check out the newest articles. </p>
+  <h2 class="articles-title">NEWEST ARTICLES</h2>
+  <app-article-card
+    icon="electricity"
+    title="Do this to minimize electricity"
+    content="This is some random preview text click card if you want to read more."
+  ></app-article-card>
+  <app-article-card
+    icon="water"
+    title="Save water by not showering"
+    content="This is some random preview text click card if you want to read more."
+  ></app-article-card>
 </div>
