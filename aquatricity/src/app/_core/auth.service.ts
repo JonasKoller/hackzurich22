@@ -30,15 +30,15 @@ export class AuthService {
     });
   }
 
-  get authenticated(): boolean {
-    return this.afAuth.auth.currentUser !== null;
+  async authenticated() {
+    return await this.afAuth.authState.pipe(first()).toPromise();
   }
 
   logout() {
     this.afAuth.auth.signOut();
   }
 
-  async getCurrentUser() {
+  getCurrentUser() {
     return this.afAuth.authState.pipe(first()).toPromise();
   }
 
