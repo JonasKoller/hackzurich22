@@ -40,6 +40,9 @@ import { PathsPageComponent } from './pages/paths-page/paths-page.component';
 import { MyForestPageComponent } from './pages/my-forest-page/my-forest-page.component';
 import { ArticlesPageComponent } from './pages/articles-page/articles-page.component';
 import { CategoryTileComponent } from './components/category-tile/category-tile.component';
+import { LinkCardComponent } from './components/link-card/link-card.component';
+import { ArticleCategoryContainerComponent } from './containers/article-category-container/article-category-container.component';
+import { ArticleCategoryComponent } from './pages/article-category/article-category.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,9 @@ import { CategoryTileComponent } from './components/category-tile/category-tile.
     MyForestPageComponent,
     ArticlesPageComponent,
     CategoryTileComponent,
+    LinkCardComponent,
+    ArticleCategoryContainerComponent,
+    ArticleCategoryComponent,
   ],
   imports: [
     BrowserModule,

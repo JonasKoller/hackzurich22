@@ -9,8 +9,8 @@ import {Path, Userdata} from '../../models';
 })
 export class OverviewComponent implements OnInit {
 
-  @Input() userdata: Userdata | null = null;
-  @Input() currentPathDetails: Path | null = null;
+  @Input() userdata!: Userdata | null;
+  @Input() currentPathDetails!: Path | null;
 
   currentUser: any;
   finishedPathTasks = ['Boil the right amount of water', 'Switch off devices in standby', 'Always turn off light'];
