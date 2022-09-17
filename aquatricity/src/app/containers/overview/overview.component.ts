@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../_core/auth.service";
 import {Observable} from "rxjs";
-import {Path, Userdata} from '../../models';
+import {Article, Path, Userdata} from '../../models';
 import {UserdataService} from '../../_core/userdata.service';
 
 @Component({
@@ -9,21 +9,22 @@ import {UserdataService} from '../../_core/userdata.service';
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })
-export class OverviewContainerComponent {
+export class OverviewContainerComponent implements OnInit {
 
-  userdata: Observable<Userdata> | null = null;
-  currentPathDetails: Observable<Path> | null = null;
+  userdata: Observable<Userdata | undefined> | null = null;
+  allPaths: Observable<Path[] | undefined> | null = null;
+  allArticles: Observable<Article[] | undefined> | null = null;
 
   constructor(private userdataService: UserdataService, private auth: AuthService) {
-    this.auth.getCurrentUser().then(user => {
-      if (!user)
-        return;
-      this.userdata = userdataService.loadUserdata(user.uid)
-    }).then(() => {
-      this.userdata?.subscribe(userdata => {
-        this.currentPathDetails = userdataService.loadCurrentPathDetails(userdata.currentPath);
-      });
-    });
   }
+
+  async ngOnInit() {
+    let user = await this.auth.getCurrentUser();
+    this.userdata = this.userdataService.loadUserdata(user!.uid);
+    this.allPaths = this.userdataService.loadPaths();
+    this.allArticles = this.userdataService.loadArticles();
+  }
+
+
 
 }

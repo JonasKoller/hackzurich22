@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from 'src/app/_core/auth.service';
-import {Path, Userdata} from '../../models';
+import {Article, Path, Userdata} from '../../models';
 
 @Component({
   selector: 'app-overview',
@@ -9,8 +9,11 @@ import {Path, Userdata} from '../../models';
 })
 export class OverviewComponent implements OnInit {
 
-  @Input() userdata: Userdata | null = null;
-  @Input() currentPathDetails: Path | null = null;
+  @Input() userdata: Userdata | undefined | null = null;
+  @Input() allPaths: Path[] | undefined |null = null;
+  @Input() allArticles: Article[] | undefined | null = null;
+
+  currentPath: Path | undefined = undefined;
 
   currentUser: any;
   finishedPathTasks = ['Boil the right amount of water', 'Switch off devices in standby', 'Always turn off light'];
@@ -20,6 +23,7 @@ export class OverviewComponent implements OnInit {
 
   async ngOnInit() {
     this.currentUser = await this.auth.getCurrentUser();
+    this.currentPath = this.allPaths?.filter(value => value.uid === this.userdata?.currentPath).pop();
   }
 
 }
