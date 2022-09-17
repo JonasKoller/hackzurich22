@@ -30,6 +30,12 @@
 
   &__link-already-registered {
     margin-top: 16px;
+    margin-left: 16px;
+    text-decoration: none;
+
+    &__icon {
+      margin-right: 8px;
+    }
   }
 
 }
