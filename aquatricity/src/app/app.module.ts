@@ -29,6 +29,7 @@ const firebaseConfig = {
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { OverviewComponent } from './pages/overview/overview.component';
 import {OverviewContainerComponent} from "./containers/overview/overview.component";
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {OverviewContainerComponent} from "./containers/overview/overview.compone
     ArticleCardComponent,
     OverviewComponent,
     OverviewContainerComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,
