@@ -33,6 +33,12 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import {AuthGuard} from "./_core/auth.guard";
 import { PastPathCardComponent } from './components/past-path-card/past-path-card.component';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { MyForestComponent } from './containers/my-forest/my-forest.component';
+import { ArticlesComponent } from './containers/articles/articles.component';
+import { PathsComponent } from './containers/paths/paths.component';
+import { PathsPageComponent } from './pages/paths-page/paths-page.component';
+import { MyForestPageComponent } from './pages/my-forest-page/my-forest-page.component';
+import { ArticlesPageComponent } from './pages/articles-page/articles-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +54,12 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     OverviewContainerComponent,
     TimelineComponent,
     PastPathCardComponent,
+    MyForestComponent,
+    ArticlesComponent,
+    PathsComponent,
+    PathsPageComponent,
+    MyForestPageComponent,
+    ArticlesPageComponent,
   ],
   imports: [
     BrowserModule,
