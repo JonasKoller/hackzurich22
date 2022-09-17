@@ -16,4 +16,20 @@
     color: #22577A;
     margin-top: 20px;
   }
+
+  &__input {
+    margin-top: 16px;
+    &--double {
+      margin-top: 36px;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+  }
+
+  &__link-already-registered {
+    margin-top: 16px;
+  }
+
 }
