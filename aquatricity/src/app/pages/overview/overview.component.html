@@ -5,10 +5,10 @@
   <h1 class="welcome">HELLO {{ currentUser.displayName }}</h1>
   <p class="welcome-description">This is your overview page check out the newest articles. </p>
 
-  <ng-template [ngIf]="currentPath !== undefined">
+  <ng-template [ngIf]="getCurrentPath() !== undefined">
     <h2 class="articles-title">CURRENT PATH</h2>
-    <p class="current-path-subtitle"><strong>Path:</strong> {{ currentPath.title }}</p>
-    <app-timeline [finishedTasks]="finishedPathTasks" [unfinishedTasks]="unfinishedPathTasks"></app-timeline>
+    <p class="current-path-subtitle"><strong>Path:</strong> {{ getCurrentPath()?.title }}</p>
+    <app-timeline [finishedTasks]="getFinishedPathTasks()" [unfinishedTasks]="getUnfinishedPathTasks()"></app-timeline>
   </ng-template>
 
   <h2 class="articles-title">NEWEST ARTICLES</h2>

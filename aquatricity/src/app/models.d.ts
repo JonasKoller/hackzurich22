@@ -2,6 +2,7 @@ export interface Userdata {
   currentPath: string;
   environmentalCoins: number;
   interests: string[];
+  readArticles: string[];
 }
 
 export interface Path {
