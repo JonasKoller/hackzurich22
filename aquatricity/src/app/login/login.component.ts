@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import {AuthService, User} from "../_core/auth.service";
-import {auth} from "firebase";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,7 @@ export class LoginComponent implements OnInit {
   user: User = { displayname: '', email: '', password: '' };
   showErrorMessage = false;
 
-  faBell = faBell;
+  faArrowRight = faArrowRight;
 
   constructor(private auth: AuthService) { }
 
