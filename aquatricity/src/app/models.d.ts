@@ -11,3 +11,10 @@ export interface Path {
   rewardEnvironmentalCoins: number;
   title: string;
 }
+
+export interface Article {
+  pointToEarn: number;
+  readingTime: string;
+  textParts: string[];
+  title: string;
+}

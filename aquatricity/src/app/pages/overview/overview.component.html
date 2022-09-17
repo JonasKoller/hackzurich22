@@ -10,6 +10,9 @@
   <app-timeline [finishedTasks]="finishedPathTasks" [unfinishedTasks]="unfinishedPathTasks"></app-timeline>
 
   <h2 class="articles-title">NEWEST ARTICLES</h2>
+  <p *ngFor="let article of currentPathArticles">{{
+    article | json
+    }}</p>
   <app-article-card
     icon="electricity"
     title="Do this to minimize electricity"

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../_core/auth.service";
 import {Observable} from "rxjs";
-import {Path, Userdata} from '../../models';
+import {Article, Path, Userdata} from '../../models';
 import {UserdataService} from '../../_core/userdata.service';
 
 @Component({
@@ -9,21 +9,30 @@ import {UserdataService} from '../../_core/userdata.service';
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })
-export class OverviewContainerComponent {
+export class OverviewContainerComponent implements OnInit {
 
-  userdata: Observable<Userdata> | null = null;
-  currentPathDetails: Observable<Path> | null = null;
+  userdata: Userdata | null = null;
+  currentPathDetails: Path | null = null;
+  currentPathArticles: Article[] = [];
 
   constructor(private userdataService: UserdataService, private auth: AuthService) {
-    this.auth.getCurrentUser().then(user => {
-      if (!user)
-        return;
-      this.userdata = userdataService.loadUserdata(user.uid)
-    }).then(() => {
-      this.userdata?.subscribe(userdata => {
-        this.currentPathDetails = userdataService.loadCurrentPathDetails(userdata.currentPath);
-      });
-    });
+  }
+
+  async ngOnInit() {
+    console.log('AFASFS')
+    let user = await this.auth.getCurrentUser();
+
+    if (user) {
+      this.userdata = await this.userdataService.loadUserdata(user.uid)
+    }
+    if (this.userdata) {
+      this.currentPathDetails = await this.userdataService.loadCurrentPathDetails(this.userdata.currentPath);
+    }
+    if (this.currentPathDetails) {
+      this.currentPathArticles = await this.userdataService.getCurrentPathArticles(this.currentPathDetails.articles);
+    }
+
+    console.log('AAAA', this.userdata, this.currentPathArticles, this.currentPathArticles);
   }
 
 }

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
-import {Observable} from 'rxjs';
-import {tap} from 'rxjs/operators';
-import {Path, Userdata} from '../models';
+import {filter, tap} from 'rxjs/operators';
+import {Article, Path, Userdata} from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +10,27 @@ export class UserdataService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  loadUserdata(uid: string): Observable<Userdata> {
-    let itemDoc: AngularFirestoreDocument<Userdata> = this.firestore.doc('users/' + uid);
-    return itemDoc.valueChanges().pipe(tap(console.log));
+  async loadUserdata(uid: string): Promise<any> {
+    debugger;
+    let itemDoc = this.firestore.collection('users').doc(uid);
+    return itemDoc.valueChanges().toPromise();
   }
 
-  loadCurrentPathDetails(uuid: string): Observable<Path> {
+  async loadCurrentPathDetails(uuid: string): Promise<Path> {
     let itemDoc: AngularFirestoreDocument<Path> = this.firestore.doc('paths/' + uuid);
-    return itemDoc.valueChanges().pipe(tap(console.log));
+    return itemDoc.valueChanges().pipe(tap(console.log)).toPromise();
+  }
+
+  async getCurrentPathArticles(articleUuids: string[]): Promise<Article[]> {
+    let articles: Article[] = [];
+    for (let uuid of articleUuids) {
+      let itemDoc: AngularFirestoreDocument<Article> = await this.firestore.doc('articles/' + uuid);
+      await itemDoc.valueChanges().toPromise().then(article => {
+        if (article) {
+          articles.push(article)
+        }
+      });
+    }
+    return articles;
   }
 }

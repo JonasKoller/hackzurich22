@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from 'src/app/_core/auth.service';
-import {Path, Userdata} from '../../models';
+import {Article, Path, Userdata} from '../../models';
 
 @Component({
   selector: 'app-overview',
@@ -11,6 +11,7 @@ export class OverviewComponent implements OnInit {
 
   @Input() userdata: Userdata | null = null;
   @Input() currentPathDetails: Path | null = null;
+  @Input() currentPathArticles: Article[] = [];
 
   currentUser: any;
   finishedPathTasks = ['Boil the right amount of water', 'Switch off devices in standby', 'Always turn off light'];
