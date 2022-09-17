@@ -1,0 +1,18 @@
+.article {
+  display: flex;
+  padding-left: 16px;
+  &__icon {
+    color: #57CC99;
+    padding-left: 16px;
+    position: relative;
+    top: 50%;
+  }
+
+  &__header {
+    padding-bottom: 8px;
+  }
+
+  &__content {
+    padding-left: 32px;
+  }
+}

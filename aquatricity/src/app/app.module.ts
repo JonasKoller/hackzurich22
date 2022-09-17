@@ -12,6 +12,7 @@ import { InterestsComponent } from './interests/interests.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
 import {FormsModule} from "@angular/forms";
 import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
 import {AngularFireModule} from "@angular/fire";
@@ -36,6 +37,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     LoginComponent,
     LandingPageComponent,
     HeaderComponent,
+    ArticleCardComponent,
   ],
   imports: [
     BrowserModule,
