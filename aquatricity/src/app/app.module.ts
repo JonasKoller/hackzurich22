@@ -44,6 +44,7 @@ import { LinkCardComponent } from './components/link-card/link-card.component';
 import { ArticleCategoryContainerComponent } from './containers/article-category-container/article-category-container.component';
 import { ArticleCategoryComponent } from './pages/article-category/article-category.component';
 import { PathCategoryContainerComponent } from './containers/path-category-container/path-category-container.component';
+import { PathsCategoryComponent } from './pages/paths-category/paths-category.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { PathCategoryContainerComponent } from './containers/path-category-conta
     ArticleCategoryContainerComponent,
     ArticleCategoryComponent,
     PathCategoryContainerComponent,
+    PathsCategoryComponent,
   ],
   imports: [
     BrowserModule,
