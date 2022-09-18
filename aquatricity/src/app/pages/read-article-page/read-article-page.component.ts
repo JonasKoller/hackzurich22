@@ -31,6 +31,15 @@ export class ReadArticlePageComponent implements OnInit {
     this.activeStep++;
   }
 
+  canEarnCoins() {
+    let data = this.userdata?.readArticles.find((article) => article === this.uid);
+    if (!data) {
+      return true;
+    }
+
+    return false;
+  }
+
   async finish() {
     let data = this.userdata?.readArticles.find((article) => article === this.uid);
     if (!data) {

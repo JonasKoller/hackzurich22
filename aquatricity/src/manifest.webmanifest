@@ -1,8 +1,8 @@
 {
-  "name": "aquatricity",
+  "name": "Aquatricity",
   "short_name": "aquatricity",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#38A3A5",
+  "background_color": "#38A3A5",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
