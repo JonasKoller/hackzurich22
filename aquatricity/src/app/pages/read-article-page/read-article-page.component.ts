@@ -32,8 +32,8 @@ export class ReadArticlePageComponent implements OnInit {
   }
 
   async finish() {
-    let data = this.userdata?.readArticles;
-    if (data?.find((article) => article !== this.uid) || data?.length === 0) {
+    let data = this.userdata?.readArticles.find((article) => article === this.uid);
+    if (!data) {
       this.userdataService.addUserPoints(this.getArticleWithUid()?.pointToEarn!, await this.auth.getCurrentUserUid());
       this.userdataService.markArticleAsRead(this.uid, await this.auth.getCurrentUserUid());
     }
