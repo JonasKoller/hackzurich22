@@ -21,6 +21,14 @@ export class PathsCategoryComponent implements OnInit {
     return filtered === undefined ? [] : filtered;
   }
 
+  hasNoPaths(): boolean {
+    let pathWithCategory = this.getPathWithCategory();
+    if (pathWithCategory === undefined) {
+      return true;
+    }
+    return pathWithCategory.length === 0;
+  }
+
 }
 
 

@@ -8,4 +8,11 @@
                  [descriptionOne]="'Reward: ' + path.rewardEnvironmentalCoins + ' Environmental Coins'"
                  [descriptionTwo]="'Duration: ' + path.duration"
                  [routerLink]="'/paths/detail/' + path.uid"></app-link-card>
+  <div *ngIf="hasNoPaths()" class="path-category-img-container">
+    <img src="assets/images/typewriter.svg"
+         alt="Illustration Typewriter"
+         class="article-category-empty-image">
+    <h2 class="path-category-second-title">404 PATH NOT FOUND</h2>
+    <p class="path-category-description">The paths for this topic are still in the making. We will inform you when they are ready!</p>
+  </div>
 </div>
