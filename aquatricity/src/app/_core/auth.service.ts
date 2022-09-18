@@ -70,7 +70,8 @@ export class AuthService {
       environmentalCoins: 0,
       interests: [],
       readArticles: [],
-      finishedPaths: {}
+      finishedPaths: {},
+      level: 1
     }).then();
   }
 

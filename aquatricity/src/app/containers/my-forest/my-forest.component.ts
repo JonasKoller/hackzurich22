@@ -11,14 +11,13 @@ import {Article, Path, Userdata} from "../../models";
 })
 export class MyForestComponent implements OnInit {
 
-  allPaths: Observable<Path[] | undefined> | null = null;
-  allArticles: Observable<Article[] | undefined> | null = null;
+  userdata: Observable<Userdata | undefined> | null = null;
 
-  constructor(private userdataService: UserdataService) { }
+  constructor(private userdataService: UserdataService, private auth: AuthService) { }
 
   async ngOnInit() {
-    this.allPaths = this.userdataService.loadPaths();
-    this.allArticles = this.userdataService.loadArticles();
+    let user = await this.auth.getCurrentUser();
+    this.userdata = this.userdataService.loadUserdata(user!.uid);
   }
 
 }

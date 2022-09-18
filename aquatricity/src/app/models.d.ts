@@ -7,6 +7,7 @@ export interface Userdata {
   interests: string[];
   readArticles: string[];
   finishedPaths: Map<string, boolean>;
+  level: number;
 }
 
 export interface Path {
