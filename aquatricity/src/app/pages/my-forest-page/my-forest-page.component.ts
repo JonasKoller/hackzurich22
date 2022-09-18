@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
-import {Article, Path} from "../../models";
+import {Userdata} from "../../models";
+import {AuthService} from "../../_core/auth.service";
+import {AngularFirestore} from "@angular/fire/firestore";
+import {UserdataService} from "../../_core/userdata.service";
 
 @Component({
   selector: 'app-my-forest-page',
@@ -9,11 +11,31 @@ import {Article, Path} from "../../models";
 })
 export class MyForestPageComponent implements OnInit {
 
-  @Input() level: number | null = 1;
+  @Input() userdata: Userdata | undefined | null = null;
 
-  constructor() { }
+  updateLevelLimit = [0,8,14,23,35,55];
+  user: any;
 
-  ngOnInit(): void {
+  constructor(private service: UserdataService, private auth: AuthService) { }
+
+  async ngOnInit() {
+    this.user = await this.auth.getCurrentUser();
   }
 
+  getNextLevel() {
+    return this.userdata ? this.userdata?.level + 1 : 1;
+  }
+
+  getButtonLabel() {
+    return this.userdata?.environmentalCoins && this.userdata.environmentalCoins >= this.updateLevelLimit[this.getNextLevel() - 1] ? 'PAY ' + this.updateLevelLimit[this.getNextLevel() - 1] +' COINS' : 'NOT ENOUGH'
+  }
+
+  isDisabled() {
+    return this.userdata?.environmentalCoins && this.userdata?.environmentalCoins < this.updateLevelLimit[this.getNextLevel() - 1] && this.getNextLevel() - 1 < 6
+  }
+
+  updateLevel() {
+    this.service.removeUserPoints(this.updateLevelLimit[this.getNextLevel() - 1], this.user?.uid)
+    this.service.increaseLevel(this.user?.uid)
+  }
 }

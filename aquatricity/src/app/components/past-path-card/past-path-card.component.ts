@@ -17,7 +17,7 @@ export class PastPathCardComponent {
 
   @Input() icon: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchases' | undefined;
   @Input() status: 'done' | 'canceled' | undefined;
-  @Input() title: string = '';
+  @Input() title: string | undefined = '';
   @Input() content: string = '';
 
 

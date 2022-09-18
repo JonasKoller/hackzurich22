@@ -1,20 +1,27 @@
 <div class="header">
   <app-header></app-header>
 </div>
+<div class="constrainer">
+  <div class="main">
+    <div class="text-2xl font-bold text-primary">THIS IS YOUR FOREST</div>
+    <div class="main__content">Upgrade your forest by using your environmental coins. Show your forest to your friends and test who the better enviromentalist among you is.</div>
+  </div>
+  <div class="image">
+    <img *ngIf="userdata?.level === 1" src="assets/images/giftig_atom_mull.jpg" alt="image of nature">
+    <img *ngIf="userdata?.level === 2" src="assets/images/sehr_schmutzig_mit_katze.jpg" alt="image of nature">
+    <img *ngIf="userdata?.level === 3" src="assets/images/forest_half_dirty.jpg" alt="image of nature">
+    <img *ngIf="userdata?.level === 4" src="assets/images/frau_am_aufraumen.jpg" alt="image of nature">
+    <img *ngIf="userdata?.level === 5" src="assets/images/ziemlich_schon_kein_dreck.jpg" alt="image of nature">
+    <img *ngIf="userdata?.level === 6" src="assets/images/sehr_schon_mit_hirsch.jpg" alt="image of nature">
+  </div>
+  <div class="level">
+    <div class="text-xl font-semibold text-primary">STATS</div>
+    <div class="level--level">LEVEL {{ userdata?.level }} Forest</div>
 
-<div class="main">
-  <div class="text-2xl font-bold text-primary">THIS IS YOUR FOREST</div>
-  <div class="main__content">Upgrade your forest by using your environmental coins. Show your forest to your friends and test who the better enviromentalist among you is.</div>
-</div>
-<div class="image">
-  <img src="assets/images/forest_half_dirty.jpg" alt="image of nature">
-</div>
-<div class="level">
-  <div class="text-xl font-semibold text-primary">STATS</div>
-  <div class="level--level">LEVEL {{ level }} Forest</div>
-
-  <div>You need 130 Environmental Coins to upgrade your forest to Level {{ level ? level + 1 : 1}}.</div>
-  <div class="level__button">
-    <button class="btn btn-primary login__button text-white" type="button">PAY 130 COINS</button>
+    <div>You need {{updateLevelLimit[getNextLevel() - 1]}} Environmental Coins to upgrade your forest to Level {{ getNextLevel() }}.</div>
+    <div class="level__button">
+      <button [disabled]="isDisabled()" class="btn btn-primary login__button text-white" type="button" (click)="updateLevel()">{{ getButtonLabel() }}</button>
+    </div>
   </div>
 </div>
+

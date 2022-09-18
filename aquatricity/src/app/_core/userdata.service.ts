@@ -34,4 +34,12 @@ export class UserdataService {
   markArticleAsRead(articleUid: string, currentUserUid: any) {
     this.firestore.collection('users').doc(currentUserUid).update({'readArticles': firebase.firestore.FieldValue.arrayUnion(articleUid)});
   }
+
+  removeUserPoints(pointsToEarn: number, currentUserUid: any) {
+    this.firestore.collection('users').doc(currentUserUid).update({'environmentalCoins': firebase.firestore.FieldValue.increment(-pointsToEarn)});
+  }
+
+  increaseLevel(currentUserUid: any) {
+    this.firestore.collection('users').doc(currentUserUid).update({'level': firebase.firestore.FieldValue.increment(1)});
+  }
 }
