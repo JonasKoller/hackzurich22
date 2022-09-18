@@ -26,7 +26,7 @@
   <div *ngIf="userdata?.finishedPaths">
     <app-past-path-card
       *ngFor="let finishedPathId of userdata?.finishedPaths | keyvalue"
-      [icon]="getFinishedPathById(finishedPathId.key).category"
+      [icon]="getFinishedPathById(finishedPathId.key)?.category"
       [title]="getFinishedPathById(finishedPathId.key).title"
       [content]="finishedPathId.value ? 'Finished' : 'Discontinued'"
       [status]="finishedPathId.value ? 'done' : 'canceled'"

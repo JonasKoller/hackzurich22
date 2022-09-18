@@ -11,7 +11,7 @@ export interface Userdata {
 
 export interface Path {
   articles: string[];
-  category: 'water' | 'electricity' | undefined;
+  category: 'water' | 'electricity' | 'mobility' | 'trash' | 'purchases' | undefined;
   duration: string;
   rewardEnvironmentalCoins: number;
   title: string;
