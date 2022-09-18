@@ -6,5 +6,6 @@
   <app-link-card *ngFor="let path of getPathWithCategory()"
                  [title]="path.title"
                  [descriptionOne]="'Reward: ' + path.rewardEnvironmentalCoins + ' Environmental Coins'"
-                 [descriptionTwo]="'Duration: ' + path.duration"></app-link-card>
+                 [descriptionTwo]="'Duration: ' + path.duration"
+                 [routerLink]="'/paths/detail/' + path.uid"></app-link-card>
 </div>

@@ -15,6 +15,7 @@ import {
 } from "./containers/article-category-container/article-category-container.component";
 import {PathCategoryContainerComponent} from './containers/path-category-container/path-category-container.component';
 import { ReadArticleComponent } from './containers/read-article/read-article.component';
+import {PathsDetailContainerComponent} from './containers/paths-detail-container/paths-detail-container.component';
 
 const routes: Routes = [
   {
@@ -71,17 +72,20 @@ const routes: Routes = [
     path: 'paths',
     children:
       [
-        {
-          path: '',
-          component: PathsComponent,
-          canActivate: [AuthGuard],
-        },
-        {
-          path: ':category',
-          component: PathCategoryContainerComponent,
-          canActivate: [AuthGuard],
-        }
-      ]
+        {path : '',
+      component: PathsComponent,
+      canActivate: [AuthGuard],
+    },
+    {
+      path : 'detail/:uid',
+      component: PathsDetailContainerComponent,
+      canActivate: [AuthGuard],
+    },
+    {
+      path : ':category',
+      component: PathCategoryContainerComponent,
+      canActivate: [AuthGuard],
+    }]
   },
   {
     path: '**',

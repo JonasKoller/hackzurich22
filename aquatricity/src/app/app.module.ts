@@ -14,7 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
 import {FormsModule} from "@angular/forms";
-import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
+import {AngularFireAuthModule} from "@angular/fire/auth";
 import {AngularFireModule} from "@angular/fire";
 
 const firebaseConfig = {
@@ -45,6 +45,8 @@ import { ArticleCategoryContainerComponent } from './containers/article-category
 import { ArticleCategoryComponent } from './pages/article-category/article-category.component';
 import { PathCategoryContainerComponent } from './containers/path-category-container/path-category-container.component';
 import { PathsCategoryComponent } from './pages/paths-category/paths-category.component';
+import { PathsDetailComponent } from './pages/paths-detail/paths-detail.component';
+import {PathsDetailContainerComponent} from './containers/paths-detail-container/paths-detail-container.component';
 import { ReadArticleComponent } from './containers/read-article/read-article.component';
 import { ReadArticlePageComponent } from './pages/read-article-page/read-article-page.component';
 
@@ -74,6 +76,8 @@ import { ReadArticlePageComponent } from './pages/read-article-page/read-article
     ArticleCategoryComponent,
     PathCategoryContainerComponent,
     PathsCategoryComponent,
+    PathsDetailComponent,
+    PathsDetailContainerComponent,
     ReadArticleComponent,
     ReadArticlePageComponent,
   ],

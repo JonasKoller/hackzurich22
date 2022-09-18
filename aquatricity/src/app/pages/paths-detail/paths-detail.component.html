@@ -1,0 +1,32 @@
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="constrainer">
+  <h1 class="paths-detail-title">{{ getSelectedPath()?.title }}</h1>
+  <h3 class="paths-detail-description" *ngIf="hasExistingPath()">Your current path</h3>
+  <app-timeline [unfinishedTasks]="getUnfinishedTasks()" [finishedTasks]="getFinishedTasks()"></app-timeline>
+
+  <ng-template [ngIf]="!hasExistingPath()">
+    <h2 class="paths-detail-subtitle">INFORMATION</h2>
+    <p>Duration: {{getSelectedPath()?.duration}}</p>
+    <p>Reward: {{getSelectedPath()?.rewardEnvironmentalCoins}} Environmental Coins</p>
+    <p class="paths-detail__margin-top">Are you ready for this path?</p>
+    <button class="btn btn-primary paths-detail__button" type="button" (click)="addNewPath()">START</button>
+  </ng-template>
+
+  <ng-template [ngIf]="existingPathIsFinished()">
+    <h2 class="paths-detail-subtitle">CONGRATS YOU'VE DONE IT!</h2>
+    <p>Wow you mastered the challenge and you are entitled to take your Environmental Coins.</p>
+    <p class="paths-detail__margin-top">Finish the challenge by clicking the button.</p>
+    <button class="btn btn-primary paths-detail__button" (click)="earnEnvironmentalCoins()">
+      <fa-icon [icon]="coinFront" *ngIf="shouldGetReward()"></fa-icon>
+      <p class="paths-detail__badge-coins" *ngIf="shouldGetReward()">+{{ getSelectedPath()?.rewardEnvironmentalCoins }}</p> FINISH
+    </button>
+  </ng-template>
+
+  <ng-template [ngIf]="existingPathIsNotFinished()">
+    <h2 class="paths-detail-subtitle">CHOOSE A NEW PATH!</h2>
+    <p>Since you have an ongoing path you will have to discontinue your current path press the button bellow to discontinue your current path.</p>
+    <button class="btn btn-error paths-detail__button paths-detail__button--danger" (click)="discontinuePath()">DISCONTINUE</button>
+  </ng-template>
+</div>
