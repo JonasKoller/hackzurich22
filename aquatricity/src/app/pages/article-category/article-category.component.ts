@@ -20,6 +20,14 @@ export class ArticleCategoryComponent implements OnInit {
     return this.articles?.filter(article => article.category === this.category);
   }
 
+  hasNoArticle(): boolean {
+    let articleWithCategory = this.getArticleWithCategory();
+    if (articleWithCategory === undefined) {
+      return true;
+    }
+    return articleWithCategory.length === 0;
+  }
+
   navigateToReadArticle(uid: string) {
     this.router.navigateByUrl(`articles/read/${uid}`);
   }

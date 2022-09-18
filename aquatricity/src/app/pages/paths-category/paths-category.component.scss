@@ -7,4 +7,25 @@
     text-transform: uppercase;
     margin-bottom: 10px;
   }
+
+  &-second-title {
+    margin-top: 32px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #22577A;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &-empty-image {
+    margin-top: 20px;
+    width: 70vw;
+  }
+
+  &-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

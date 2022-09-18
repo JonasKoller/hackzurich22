@@ -8,6 +8,8 @@ ul {
 li {
   color: #38A3A5;
   margin-bottom: 16px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 li::before {

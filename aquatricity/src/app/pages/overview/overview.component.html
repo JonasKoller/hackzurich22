@@ -18,6 +18,7 @@
       [icon]="article.category === undefined ? 'electricity' : article.category"
       [title]="article.title"
       [content]="shortenTo200Chars(article.textParts[0])"
+      [routerLink]="['/articles/read/', article.uid]"
     ></app-article-card>
   </ng-template>
 

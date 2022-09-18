@@ -3,12 +3,22 @@
 </div>
 <div class="constrainer">
   <h1 class="article-category-title">ARTICLES ABOUT {{ category }}</h1>
-  <p class="article-category-description">Check out these articles about {{ category }} and win coins by just taking time and reading them.</p>
-  <h2 class="article-category-second-title">ARTICLES</h2>
+  <ng-template [ngIf]="!hasNoArticle()">
+    <p class="article-category-description">Check out these articles about {{ category }} and win coins by just taking time and reading them.</p>
+    <h2 class="article-category-second-title">ARTICLES</h2>
+  </ng-template>
   <app-link-card
     *ngFor="let article of getArticleWithCategory()"
     [title]="article.title"
     [descriptionOne]="article.readingTime"
     (click)="navigateToReadArticle(article.uid)"
   ></app-link-card>
+  <div *ngIf="hasNoArticle()" class="article-category-img-container">
+    <img src="assets/images/typewriter.svg"
+         alt="Illustration Typewriter"
+         class="article-category-empty-image">
+    <h2 class="article-category-second-title">404 ARTICLE NOT FOUND</h2>
+    <p class="article-category-description">The articles for this topic are still in the making. We will inform you when they are ready!</p>
+  </div>
+
 </div>
